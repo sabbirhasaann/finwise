@@ -48,6 +48,9 @@ class LoginSignupFinwise extends StatelessWidget{
               SizedBox(height: 10),
               PrimaryButton(
                 label: 'Log In',
+                onpressed: (){
+                    NavigationService().navigateToRoute('login/');
+                  },
               ),
 
               SizedBox(
@@ -55,6 +58,9 @@ class LoginSignupFinwise extends StatelessWidget{
               ),
               SecondaryButton(
                 label: 'SignUp',
+                onpressed: (){
+                  NavigationService().navigateToRoute('signup/');
+                },
               ),
               SizedBox(
                 height: 10,

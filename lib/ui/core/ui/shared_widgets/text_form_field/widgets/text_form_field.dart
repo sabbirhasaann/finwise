@@ -21,10 +21,14 @@ class _ExtendedTextFormFieldState extends State<ExtendedTextFormField> {
             decoration: InputDecoration(
               label: Text(widget.label),
               hintText: widget.hint,
+              fillColor: Color(0xffDFF7E2),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              )
             ),
             style: TextStyle(
               fontSize: 16,
-              height: 14,
+              // height: 1,
               // color: Color(0xff093030),
               color: Color(0xff0E3E3E),
             ),

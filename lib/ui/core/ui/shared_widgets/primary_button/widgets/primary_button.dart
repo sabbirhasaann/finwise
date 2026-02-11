@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget{
-  const PrimaryButton({super.key, required this.label});
+  const PrimaryButton({super.key, required this.label, required this.onpressed});
   final String label;
+  final Function onpressed;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
 
-      onPressed: (){},
+      onPressed: (){
+        onpressed();
+      },
       style: ElevatedButton.styleFrom(
         backgroundColor: Color(0xFF00D09E),
         fixedSize: Size(207, 45),

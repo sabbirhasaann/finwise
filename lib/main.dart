@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'data/services/navigation_service.dart';
 import 'ui/splash/widgets/splash_finwise.dart';
 import 'ui/login_signup/widgets/login_signup_finwise.dart';
+import 'ui/login_signup/widgets/login.dart';
+import 'ui/login_signup/widgets/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +27,12 @@ class MyApp extends StatelessWidget {
         },
         'login_signup_finwise/': (ctx){
           return LoginSignupFinwise();
+        },
+        'login/': (ctx){
+          return Login();
+        },
+        'signup/': (ctx){
+          return Signup();
         }
 
       }

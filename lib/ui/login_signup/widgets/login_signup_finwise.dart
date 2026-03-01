@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:lorem_ipsum/lorem_ipsum.dart';
+import 'package:lorem_ipsum/lorem_ipsum.dart';
 import '../../core/ui/shared_widgets/primary_button/widgets/primary_button.dart';
 import '../../core/ui/shared_widgets/secondary_button/widgets/secondary_button.dart';
+import '../../core/ui/shared_widgets/text_button/widgets/text_button.dart';
 
 import '../../../../data/services/navigation_service.dart';
 
@@ -11,8 +12,8 @@ class LoginSignupFinwise extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    // String text = loremIpsum(paragraphs: 1, words: 15);
-    String text  = "HEllo";
+    String text = loremIpsum(paragraphs: 1, words: 10);
+    // String text  = "HEllo";
 
     return Scaffold(
       body: Center(
@@ -65,13 +66,17 @@ class LoginSignupFinwise extends StatelessWidget{
               SizedBox(
                 height: 10,
               ),
-              Text('Forgot Password?',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xFF093030),
+              TextButtonModified(
+                label: 'Forgot Password?',
+                fontsize: 14,
                 ),
-              ),
+              // Text('Forgot Password?',
+              //   style: TextStyle(
+              //     fontSize: 14,
+              //     fontWeight: FontWeight.w700,
+              //     color: Color(0xFF093030),
+              //   ),
+              // ),
               SizedBox(height: 10),
               IconButton(
                 onPressed: () async {

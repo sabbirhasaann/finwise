@@ -4,6 +4,7 @@ import 'ui/splash/widgets/splash_finwise.dart';
 import 'ui/login_signup/widgets/login_signup_finwise.dart';
 import 'ui/login_signup/widgets/login.dart';
 import 'ui/login_signup/widgets/signup.dart';
+import 'ui/forgot_password/widgets/forgot_password.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
         },
         'signup/': (ctx){
           return Signup();
+        },
+        'forgot_password/':(ctx){
+          return ForgotPassword();
         }
 
       }

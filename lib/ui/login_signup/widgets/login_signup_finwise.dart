@@ -69,6 +69,9 @@ class LoginSignupFinwise extends StatelessWidget{
               TextButtonModified(
                 label: 'Forgot Password?',
                 fontsize: 14,
+                onpressed: (){
+                  NavigationService().navigateToRoute('forgot_password/');
+                },
                 ),
               // Text('Forgot Password?',
               //   style: TextStyle(

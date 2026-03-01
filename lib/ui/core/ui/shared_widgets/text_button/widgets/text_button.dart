@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 
 class TextButtonModified extends StatelessWidget{
 
-  const TextButtonModified({super.key, this.label, this.fontsize});
+  const TextButtonModified({super.key, this.label, this.fontsize, required this.onpressed});
   final String ?label;
   final double ?fontsize;
+  final VoidCallback onpressed;
   @override
   Widget build(BuildContext context){
     return TextButton(
-      onPressed: (){},
+      onPressed: onpressed,
       child: Text(label ?? 'Not set',
       style: TextStyle(
           fontSize: fontsize ?? 10,

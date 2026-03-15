@@ -1,13 +1,16 @@
+import 'package:finwise/ui/core/ui/shared_widgets/primary_button/widgets/primary_button.dart';
+import 'package:finwise/ui/core/ui/shared_widgets/secondary_button/widgets/secondary_button.dart';
+import 'package:finwise/ui/core/ui/shared_widgets/text_button/widgets/text_button.dart';
 import 'package:flutter/material.dart';
+import 'package:lorem_ipsum/lorem_ipsum.dart';
 import '../../core/ui/shared_widgets/text_form_field/widgets/text_form_field.dart';
-import '../../core/ui/shared_widgets/primary_button/widgets/primary_button.dart';
-import '../../core/ui/shared_widgets/secondary_button/widgets/secondary_button.dart';
-import '../../../data/services/navigation_service.dart';
-class Login extends StatelessWidget{
-  const Login({super.key});
 
-  @override
-  Widget build(BuildContext context){
+class SecurityPin extends StatelessWidget{
+    const SecurityPin({super.key});
+
+    @override
+  Widget build(BuildContext context) {
+    String subtitle = loremIpsum(paragraphs: 1, words: 5);
     return Scaffold(
       backgroundColor: Color(0xff00D09E),
       body: Column(
@@ -18,7 +21,7 @@ class Login extends StatelessWidget{
           Expanded(
             flex: 1,
             child: Center(
-              child: Text('Welcome',
+              child: Text('Security Pin',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
@@ -37,44 +40,28 @@ class Login extends StatelessWidget{
                 ),
               ),
               height: double.infinity,
-              // margin: EdgeInsets.only(top: 150),
-              
+              width: double.infinity,
+
               child: SingleChildScrollView(
                 child: Padding(
                   padding: EdgeInsetsGeometry.symmetric(horizontal: 50, vertical: 80),
                   child: Form(
                     child: Column(
                       children: [
+                        Text('Enter Security Pin'),
+                        const SizedBox(height: 82,),
                         ExtendedTextFormField(
-                          label: 'Username or email',
-                          hint: 'example@example.com',
+                          label: 'Email', 
+                          hint: 'example@example.com'
                         ),
-                        SizedBox(height: 40,),
-                        ExtendedTextFormField(
-                          label: 'Password', 
-                          hint: 'Enter password',
-                          obscure: true,
-                        ),
-                        SizedBox(height: 50,),
+                        const SizedBox(height: 59,),
                         PrimaryButton(
-                          label: 'Log In',
-                          onpressed: (){
-                            NavigationService().removeAndNavigateToRoute('bottom_navs/');
-                          },
+                          label: 'Next Step', 
+                          onpressed: (){}
                         ),
-                        SizedBox(height: 19,),
-                        Text('Forgot Passowrd'),
-                        SizedBox(height: 14,),
-                        SecondaryButton(
-                          label: 'Sign Up', 
-                          onpressed: (){
-                            NavigationService().navigateToRoute('signup/');
-                          },
-                        ),
-                        SizedBox(height: 23,),
-                          
-                        Text('Use Fingerprint To Access'),
-                        SizedBox(height: 28,),    
+                        const SizedBox(height: 10,),
+                        SecondaryButton(label: 'Sign Up', onpressed: (){}),
+                        const SizedBox(height: 100,),
                         Text('or sign up with'),
                         SizedBox(height: 19,),    
                         Row(
@@ -93,9 +80,10 @@ class Login extends StatelessWidget{
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text('Don\'t have an account?'),
-                            Text('SignUp'),
+                            TextButtonModified(label: 'SignUp', onpressed: (){},),
                           ],
                         )
+                  
                       ],
                     ),
                   ),

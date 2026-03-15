@@ -1,3 +1,4 @@
+import 'package:finwise/data/services/navigation_service.dart';
 import 'package:finwise/ui/core/ui/shared_widgets/primary_button/widgets/primary_button.dart';
 import 'package:finwise/ui/core/ui/shared_widgets/secondary_button/widgets/secondary_button.dart';
 import 'package:finwise/ui/core/ui/shared_widgets/text_button/widgets/text_button.dart';
@@ -63,7 +64,9 @@ class ForgotPassword extends StatelessWidget{
                             const SizedBox(height: 59,),
                             PrimaryButton(
                               label: 'Next Step', 
-                              onpressed: (){}
+                              onpressed: (){
+                                NavigationService().navigateToRoute('security_pin/');
+                              }
                             ),
                             const SizedBox(height: 100,),
                             SecondaryButton(label: 'Sign Up', onpressed: (){}),

@@ -4,10 +4,21 @@ class BottomNav extends StatelessWidget{
   BottomNav({super.key});
   final List<BottomNavigationBarItem> navItem = [
     BottomNavigationBarItem(
-      icon: Icon(Icons.home_outlined),
+      icon: ClipRRect(
+        borderRadius: BorderRadiusGeometry.circular(22),
+        child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(22),
+              color: Color(0xFF00D09E),
+            ),
+            height: 53,
+            width: 57,
+            child: Icon(Icons.home_outlined),
+        
+          ),
+      ),
       label: 'Home',
       backgroundColor: Color(0xFFDFF7E2),
-
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.analytics_outlined),
@@ -52,7 +63,7 @@ class BottomNav extends StatelessWidget{
         backgroundColor: Color(0xFFDFF7E2),
         fixedColor: Color(0xFF052224),unselectedItemColor: const Color(0xFF052224),
         iconSize: 32,
-              ),
+        ),
       ),
     );
   }

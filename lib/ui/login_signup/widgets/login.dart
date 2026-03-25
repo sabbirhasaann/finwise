@@ -59,7 +59,8 @@ class Login extends StatelessWidget{
                         PrimaryButton(
                           label: 'Log In',
                           onpressed: (){
-                            NavigationService().removeAndNavigateToRoute('bottom_navs/');
+                            // NavigationService().removeAndNavigateToRoute('bottom_navs/');
+                            NavigationService().navigateToRoute('home/');
                           },
                         ),
                         SizedBox(height: 19,),

@@ -60,7 +60,8 @@ class LoginSignupFinwise extends StatelessWidget{
               SecondaryButton(
                 label: 'SignUp',
                 onpressed: (){
-                  NavigationService().navigateToRoute('signup/');
+                  // NavigationService().navigateToRoute('signup/');
+                  NavigationService().navigateToRoute('components/');
                 },
               ),
               SizedBox(

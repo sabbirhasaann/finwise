@@ -23,7 +23,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: .fromSeed(
+          seedColor: Color(0xFF00D09E),
+          primary: Color(0xFF00D09E),
+          
+        ),
+        
       ),
       navigatorKey: NavigationService.navigatorKey,
       initialRoute: '/',

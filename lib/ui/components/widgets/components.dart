@@ -22,23 +22,90 @@ class TabsRegular extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 80,
+      width: 358,
+      height: 60,
+      padding: EdgeInsets.symmetric(horizontal: 14, vertical: 6),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(15),
+          Radius.circular(22),
         ),
-        color: Color(0xFF2022fF)
+        color: Color(0xFFDFF7E2)
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text('Daily'),
+          Container(
+            width: 95,
+            height: 31,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(19)
+              ),
+              // color: Color(0xFF00D09E),
+            ),
+            alignment: Alignment.center,
+            child: 
+              Text(
+                'Daily',
+                style: TextStyle(
+                  color: Color(0xFF052224),
+                  fontFamily: 'Poppins',
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400
+                ),
+                textAlign: TextAlign.center,
+                
+            )
+          ),
           const SizedBox(width: 10,),
-          Text('Weekly'),
+          Container(
+            width: 95,
+            height: 31,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(19)
+              ),
+              // color: Color(0xFF00D09E),
+            ),
+            alignment: Alignment.center,
+            child: 
+              Text(
+                'Weekly',
+                style: TextStyle(
+                  color: Color(0xFF052224),
+                  fontFamily: 'Poppins',
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400
+                ),
+                textAlign: TextAlign.center,
+                
+            )
+          ),
           const SizedBox(width: 10,),
-          Text('Monthly'),
-          const SizedBox(width: 10,),
+          Container(
+            width: 95,
+            height: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(19)
+              ),
+              color: Color(0xFF00D09E),
+            ),
+            alignment: Alignment.center,
+            child: 
+              Text(
+                'Monthly',
+                style: TextStyle(
+                  color: Color(0xFF052224),
+                  fontFamily: 'Poppins',
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400
+                ),
+                textAlign: TextAlign.center,
+                
+            )
+          ),
         ],
       ),
     );

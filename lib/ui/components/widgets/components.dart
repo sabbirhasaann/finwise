@@ -6,6 +6,7 @@ class Components extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: FinwiseAppBar(),
       body: Center(
         // child: NestedContainer()
         // child: HomeCont(),
@@ -15,6 +16,56 @@ class Components extends StatelessWidget{
       ),
     );
   }
+}
+
+class FinwiseAppBar extends StatelessWidget implements PreferredSizeWidget{
+  const FinwiseAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      centerTitle: false,
+      title: Padding(
+        padding: const EdgeInsets.only(left: 36.5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Hi, Welcome back',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+              ),  
+            ),
+            const SizedBox(height: 2,),
+            Text('Good Morning',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 13,
+                fontWeight: FontWeight.w500,
+              ),  
+            ),
+          ],
+        ),
+      ),
+      automaticallyImplyLeading: false,
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 36.5),
+          child: IconButton(
+            onPressed: (){}, 
+            icon: Icon(Icons.notifications),
+          ),
+        )
+      ],
+    );
+  }
+  // This is the magic part that makes it a "PreferredWidget"
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight); 
+  // kToolbarHeight is the standard 56.0. 
+  // If your column feels cramped, use: const Size.fromHeight(70.0);
 }
 
 class Tile extends StatelessWidget{

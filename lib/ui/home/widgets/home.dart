@@ -55,70 +55,93 @@ class Home extends StatelessWidget{
             flex:  1,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Expanded(
-                  child: IntrinsicHeight(
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Column(
+                Container(
+                  height: 60,
+                  padding: EdgeInsetsGeometry.symmetric(horizontal: 36.5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Expanded(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(Icons.check),
-                                    SizedBox(width: 2,),
-                                    Text('Total Balance'),
-                                  ],
-                                ),
+                              Icon(Icons.arrow_upward,
+                                size: 12,
                               ),
-                              const SizedBox(height: 5,),
-                              Text('\$7,7783.00'),
+                              SizedBox(width: 2,),
+                              Text(
+                                'Total Balance',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                ),  
+                              ),
                             ],
                           ),
-                        ),
-                    
-                    
-                        // --- THE VERTICAL BAR ---
-                        const VerticalDivider(
-                          color: Colors.grey,  // Color of the line
-                          thickness: 1,        // Width of the line
-                          width: 20,           // Total space the divider takes up (padding)
-                          indent: 10,          // Empty space at the top
-                          endIndent: 10,       // Empty space at the bottom
-                        ),
-                    
-                        Expanded(
-                          child: Column(
+                          const SizedBox(height: 2,),
+                          Text(
+                            '\$7,7783.00',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      VerticalDivider(
+                        thickness: 1,
+                        indent: 4,
+                        endIndent: 4,
+                        color: Colors.white,
+                      ),
+
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Expanded(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(Icons.check),
-                                    SizedBox(width: 2,),
-                                    Text('Total Balance'),
-                                  ],
+                              Icon(
+                                Icons.arrow_downward,
+                                size: 12,
+                              ),
+                              SizedBox(width: 2,),
+                              Text(
+                                'Total Expense',
+                                style: TextStyle(
+                                  fontSize: 12,
                                 ),
                               ),
-                              const SizedBox(height: 5,),
-                              Text('\$7,7783.00'),
                             ],
                           ),
-                        )
-                      ],
-                    ),
-                  ),
+                          const SizedBox(height: 2,),
+                          Text(
+                            '-\$1187,04',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF0068FF)
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  )
                 ),
-      
+
                 SizedBox(
-                  height: 10,
+                  height: 12,
                 ),
-      
+
                 Stack(
+                  alignment: Alignment.center,
                   children: [
                     Container(
                       height: 27,
@@ -129,48 +152,65 @@ class Home extends StatelessWidget{
                         borderRadius: BorderRadius.all(Radius.circular(13.5))
                       ),
                       alignment: Alignment.centerLeft,
-                      child: Text('30%',
+                      child: Text(
+                        '30%',
                         style: TextStyle(
                           color: Color(0xFFFFFFFF),
+                          fontSize: 12,
                         ),
                       ),
                     ),
                     Positioned(
-                      right: -1,
+                      top: 0,
+                      bottom: 0,
+                      right: 0,
+
                       child: Container(
                         height: 27,
                         width: 261,
                         padding: EdgeInsets.symmetric(horizontal: 12),
                         decoration: BoxDecoration(
                           color: Color(0xFFFFFFFF),
-                          borderRadius: BorderRadius.all(Radius.circular(13.5))
+                          borderRadius: BorderRadius.all(Radius.circular(13.5)),
+                          border: Border.all(color: Colors.white, width: 0),
                         ),
                         alignment: Alignment.centerRight,
-                        child: Text('\$20,000',
+                        child: Text(
+                          '\$20,000',
                           style: TextStyle(
                             color: Color(0xFF000000),
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500
                           ),
                         ),
                       ),
                     )
                   ],
                 ),
-      
+
                 SizedBox(
-                  height: 1,
+                  height: 10,
                 ),
-      
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.check),
-                      Text('30% of you expense, Looks good'),
-                    ],
-                  ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.check_box_outlined,
+                      size: 15,
+                    ),
+                    const SizedBox(width: 4,),
+                    Text(
+                      '30% of you expense, Looks good',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400
+                      ),
+                    ),
+                  ],
                 )
               ],
-            )
+            ),
           ),
       
           Expanded(

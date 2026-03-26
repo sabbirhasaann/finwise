@@ -24,42 +24,45 @@ class FinwiseAppBar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      centerTitle: false,
-      title: Padding(
-        padding: const EdgeInsets.only(left: 36.5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Hi, Welcome back',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 15,
-                fontWeight: FontWeight.w700,
-              ),  
-            ),
-            const SizedBox(height: 2,),
-            Text('Good Morning',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
-              ),  
-            ),
-          ],
-        ),
-      ),
-      automaticallyImplyLeading: false,
-      actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 36.5),
-          child: IconButton(
-            onPressed: (){}, 
-            icon: Icon(Icons.notifications),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        centerTitle: false,
+        toolbarHeight: 80,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 36.5),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Hi, Welcome back',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),  
+              ),
+              const SizedBox(height: 2,),
+              Text('Good Morning',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                ),  
+              ),
+            ],
           ),
-        )
-      ],
-    );
+        ),
+        automaticallyImplyLeading: false,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 36.5),
+            child: IconButton(
+              onPressed: (){}, 
+              icon: Icon(Icons.notifications),
+            ),
+          )
+        ],
+        
+      );
   }
   // This is the magic part that makes it a "PreferredWidget"
   @override

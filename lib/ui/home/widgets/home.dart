@@ -7,6 +7,47 @@ class Home extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
+        appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        centerTitle: false,
+        toolbarHeight: 80,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 36.5),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Hi, Welcome back',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),  
+              ),
+              const SizedBox(height: 2,),
+              Text('Good Morning',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                ),  
+              ),
+            ],
+          ),
+        ),
+        automaticallyImplyLeading: false,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 36.5),
+            child: IconButton(
+              onPressed: (){}, 
+              icon: Icon(Icons.notifications),
+            ),
+          )
+        ],
+        
+      ),
+  
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [

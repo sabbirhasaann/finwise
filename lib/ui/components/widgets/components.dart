@@ -10,7 +10,111 @@ class Components extends StatelessWidget{
         // child: NestedContainer()
         // child: HomeCont(),
         // child: NestedCircle(),
-        child: TabsRegular(),
+        // child: TabsRegular(),
+        child: Tile(),
+      ),
+    );
+  }
+}
+
+class Tile extends StatelessWidget{
+  const Tile({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+      child: SizedBox(
+        height: 57,
+        child: Row(
+          children: [
+            Container(
+              width: 57,
+              height: 53,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(22),
+                ),
+                color: Color(0xFF6DB6FE)
+              ),
+              child: Icon(
+                Icons.stacked_bar_chart,
+                color: Colors.white,
+              
+              )
+            ),
+            SizedBox(width: 10,),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Salary',
+                    style: TextStyle(
+                     color: Color(0xFF052224),
+                     fontFamily: 'Poppins',
+                     fontSize: 15,
+                     fontWeight: FontWeight.bold,
+              
+                    ),
+                  ),
+                  Text(
+                    '18:17 - April 30',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF0068FF)
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            VerticalDivider(
+              width: 35.49,
+              color: Color(0xFF00D095),
+              thickness: 1.01,
+            ),
+            // const SizedBox(width: 10,),
+      
+            Expanded(
+              child: Text(
+                'Monthly',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w300,
+                  // height: 15,
+                  color: Color(0xFF052224),
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            
+            VerticalDivider(
+              width: 35.49,
+              color: Color(0xFF00D095),
+              thickness: 1.01,
+            ),
+            // const SizedBox(width: 10,),
+            Expanded(
+              child: Text(
+                '\$4,000.00',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  // height: 15,
+                  color: Color(0xFF052224),
+                ),
+                textAlign: TextAlign.right,
+              ),
+      
+            ),
+      
+          ],
+        ),
+      
       ),
     );
   }

@@ -9,11 +9,11 @@ class Components extends StatelessWidget{
       appBar: FinwiseAppBar(),
       body: Center(
         // child: NestedContainer()
-        // child: HomeCont(),
+        child: HomeCont(),
         // child: NestedCircle(),
         // child: TabsRegular(),
         // child: Tile(),
-        child: HomeTop(),
+        // child: HomeTop(),
       ),
     );
   }
@@ -458,26 +458,26 @@ class NestedCircle extends StatelessWidget{
         ),
 
         SizedBox(
-      width: 50,  // Half the width of the base circle
-      height: 50, // Half the height of the base circle
-      child: ClipRect(
-        child: Align(
-          alignment: Alignment.topCenter,
-          heightFactor: 0.5,
-          child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: const Color(0xFF00D09E), // Darker Green
-                width: 2,
+          width: 50,  // Half the width of the base circle
+          height: 50, // Half the height of the base circle
+          child: ClipRect(
+            child: Align(
+              alignment: Alignment.topCenter,
+              heightFactor: 0.5,
+              child: Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: const Color(0xFF00D09E), // Darker Green
+                    width: 2,
+                  ),
+                ),
               ),
             ),
           ),
         ),
-      ),
-    ),
       ],
     );
   }
@@ -488,90 +488,152 @@ class HomeCont extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 151,
-      width: 357,
-      decoration: BoxDecoration(
-        color: Color(0xFF00D09E),
-        borderRadius: BorderRadius.all(Radius.circular(31))
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-            child: Column(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 36.5),
+      child: Container(
+        height: 152,
+        width: 357,
+        decoration: BoxDecoration(
+          color: Color(0xFF00D09E),
+          borderRadius: BorderRadius.all(Radius.circular(31))
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.car_crash),
-                SizedBox(height: 2,),
-                Text('Savings on Goal'),
+                SizedBox(
+                  height: 50,
+                  width: 50,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      SizedBox(
+                        height: 50,
+                        width: 50,
+                        child: const CircularProgressIndicator(
+                          value: 0.5, // 70% progress
+                          strokeWidth: 3,
+                          backgroundColor: Color(0xFFDFF7E2),
+                          valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF0068FF)),
+                        ),
+                      ),
+                      
+                      ImageIcon(
+                          AssetImage('assets/images/car.png')
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10,),
+                Text('Savings\non Goal',
+                  style: TextStyle(
+                    fontSize: 12,
+                    height: 1.5,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ],
             ),
-          ),
+              
+            // VerticalDivider(
+            //   thickness: 2,
+            //   color: Color(0xFFFFFFFF),
+            //   indent: 12,
+            //   endIndent: 12,
+            // ),
+
+            Container(
+              height: 108,
+              width: 2.5,
+              color: Color(0xFFFFFFFF),
+            ),
             
-          VerticalDivider(
-            thickness: 2,
-            color: Color(0xFFFFFFFF),
-            indent: 12,
-            endIndent: 12,
-          ),
-            
-          Expanded(
-            child: Column(
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(Icons.money),
-                      SizedBox(width: 10,),
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Revenue Last Week'),
-                              SizedBox(height: 2,),
-                              Text('\$4,000.00'),
-                            ],
-                        ),
-                      )
-                    ],
-                  ),
+                Row(
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ImageIcon(
+                      AssetImage('assets/images/salary.png'),
+                    ),
+                    SizedBox(width: 10,),
+                    Column(
+                      // mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Revenue Last Week',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: 2,),
+                          Text(
+                            '\$4,000.00',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xFF052224)
+                            ),
+                          ),
+                        ],
+                    )
+                  ],
                 ),
-                
-                Divider(
-                  thickness: 2,
+
+                const SizedBox(height: 12,),
+
+                Container(
+                  width: 161,
+                  height: 2.5,
                   color: Color(0xFFFFFFFF),
-                  indent: 5,
-                  endIndent: 10,
                 ),
             
-                Expanded(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(Icons.money),
-                      SizedBox(width: 10,),
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Food Last Week'),
-                              SizedBox(height: 2,),
-                              Text('-\$4,000.00'),
-                            ],
-                        ),
-                      )
-                    ],
-                  ),
+                const SizedBox(height: 12,),
+            
+            
+                Row(
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ImageIcon(
+                      AssetImage('assets/images/food.png'),
+                    ),
+                    SizedBox(width: 10,),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Food Last Week',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: 2,),
+                          Text(
+                            '-\$100.00',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xff0068ff)
+                            ),
+
+                          ),
+                        ],
+                    )
+                  ],
                 ),
               ],
             ),
-          ),
-        
-        ],
+          
+          ],
+        ),
       ),
     );
   }

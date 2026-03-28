@@ -64,6 +64,10 @@ flutter:
   assets:
     - assets/images/vector.png
     - assets/images/vector_v2.png
+    - assets/images/salary.png
+    - assets/images/food.png
+    - assets/images/car.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

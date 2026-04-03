@@ -8,12 +8,126 @@ class Components extends StatelessWidget{
     return Scaffold(
       appBar: FinwiseAppBar(),
       body: Center(
+        child: NotifScComp(),
         // child: NestedContainer()
-        child: HomeCont(),
+        // child: HomeCont(),
         // child: NestedCircle(),
         // child: TabsRegular(),
         // child: Tile(),
         // child: HomeTop(),
+      ),
+    );
+  }
+}
+
+class NotifScComp extends StatelessWidget{
+  const NotifScComp({super.key});
+
+  @override
+  Widget build(BuildContext contex){
+    bool _isTransaction = true;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 36.5),
+      child: Container(
+        height: 130,
+        // decoration: BoxDecoration(
+        //   border: Border(
+        //     bottom: BorderSide(
+        //       color: Color(0xFF223355),
+        //       style: BorderStyle.solid,
+        //       width: 1.5,
+        //     )
+        //   )
+        // ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      width: 37,
+                      height: 37,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF00D09E),
+                        borderRadius: BorderRadius.circular(12)
+                      ),
+                      child: Icon(
+                        Icons.notification_add_sharp,
+                        color: Color(0xff093030),
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(width: 13,),
+                Expanded(
+                  child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _isTransaction == true
+                      ? Text(
+                        'Transaction!',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.bold
+                        ),
+                      ) 
+                      : Text(
+                        'Remainder!',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                  
+                      const SizedBox(height: 3,),
+                      
+                      Text(
+                        'Set up you automatic  sdf asfda sdfa savings to meet you savings goal',
+                        style: TextStyle(
+                          fontSize: 14,
+                          letterSpacing: 0.5,
+                        ),
+                        // softWrap: true,
+                        // maxLines: 2,
+                      ),
+                  
+                      if(_isTransaction == true)
+                        Text(
+                          'Groceries | Pantry | -\$100.00',
+                          style: TextStyle(
+                            color: Color(0xFF0068FF),
+                          )
+                        )                     
+                    ],
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 13,),
+            Row(
+              children: [
+                Spacer(),
+                Text(
+                  '17:00 April 24',
+                  style: TextStyle(
+                    color: Color(0xFF0068FF)
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 10,),
+            Container(
+              height: 1,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Color(0xFF00D09E),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

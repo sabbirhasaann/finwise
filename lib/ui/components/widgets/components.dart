@@ -8,7 +8,8 @@ class Components extends StatelessWidget{
     return Scaffold(
       appBar: FinwiseAppBar(),
       body: Center(
-        child: NotifScComp(),
+        child: AccountBalanceScreenComponent1(),
+        // child: NotifScComp(),
         // child: NestedContainer()
         // child: HomeCont(),
         // child: NestedCircle(),
@@ -19,6 +20,52 @@ class Components extends StatelessWidget{
     );
   }
 }
+
+class AccountBalanceScreenComponent1 extends StatelessWidget{
+  const AccountBalanceScreenComponent1({super.key});
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      height: 101,
+      width: 171,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(14.89),
+      ),
+      child: Column(
+        children: [
+          Icon(
+            Icons.arrow_downward,
+            color: Color(0xFF0068FF),
+            // color: Color(0xFF00D09E),
+          ),
+          const SizedBox(height: 5,),
+          Text(
+            'Expense',
+            style: TextStyle(
+              color: Color(0xFF093030),
+              fontSize: 15,
+              fontWeight: FontWeight.w500
+            ),
+          ),
+          const SizedBox(height: 5,),
+          Text(
+            '4,000.00',
+            style: TextStyle(
+              color: Color(0xFF093030),
+              // color:Color(0xFF0068FF),
+              fontSize: 20,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w600
+            ),
+          ),
+          
+        ],
+      ),
+    );
+  }
+}
+
 
 class NotifScComp extends StatelessWidget{
   const NotifScComp({super.key});
